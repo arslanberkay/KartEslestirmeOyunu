@@ -38,7 +38,7 @@
             flpKartAlani.BackColor = Color.Black;
             flpKartAlani.Location = new Point(34, 25);
             flpKartAlani.Name = "flpKartAlani";
-            flpKartAlani.Size = new Size(1026, 776);
+            flpKartAlani.Size = new Size(1028, 773);
             flpKartAlani.TabIndex = 0;
             // 
             // tmrYanlisKartlariKapat

@@ -49,6 +49,7 @@ namespace WFAKartEslestirmeOyunu.UI
                 resimKartlari.Add(btn);
 
                 btn.Click += Btn_Click;
+
             }
         }
 
@@ -60,6 +61,7 @@ namespace WFAKartEslestirmeOyunu.UI
             }
             resimAcmaSayaci = 0;
         }
+
         void ResimKartlariniAktifEt()
         {
             foreach (var resimKarti in resimKartlari)
@@ -104,7 +106,7 @@ namespace WFAKartEslestirmeOyunu.UI
                     tmrYanlisKartlariKapat.Start();
                 }
             }
-            if (acilanResimSayisi==6)
+            if (acilanResimSayisi == 6)
             {
                 OyunuBitir();
             }
@@ -112,7 +114,7 @@ namespace WFAKartEslestirmeOyunu.UI
 
         void OyunuBitir()
         {
-            DialogResult dr = MessageBox.Show("Tebrikler oyunu kazandýnýz! Yeniden oynamak ister misiniz?","Bilgi",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+            DialogResult dr = MessageBox.Show("Tebrikler oyunu kazandýnýz! Yeniden oynamak ister misiniz?", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dr == DialogResult.Yes)
             {
                 tekrarEtmeyenRasgeleSayilar.Clear();
@@ -120,15 +122,15 @@ namespace WFAKartEslestirmeOyunu.UI
                 resimAcmaSayaci = 0;
                 birinciTiklananResimKarti = null;
                 ikinciTiklananResimKarti = null;
-                for ( int i = 0;  i < resimKartlari.Count;  i++)
+                for (int i = 0; i < resimKartlari.Count; i++)
                 {
                     resimKartlari[i].BackgroundImage = null;
                     resimKartlari[i] = null;
                 }
                 flpKartAlani.Controls.Clear();
                 resimKartlari.Clear();
-                
-                
+
+
                 KartOlustur();
             }
             else
